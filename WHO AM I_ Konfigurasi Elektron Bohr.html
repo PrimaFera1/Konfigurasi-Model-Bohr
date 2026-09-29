@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>WHO AM I? Konfigurasi Elektron Bohr</title>
+<style>
+:root{--bg:#10151c;--pn:#18202b;--ln:#2a3646;--tx:#e8edf3;--mu:#8fa0b3;--ac:#5cc8d7;--ok:#4fbf7f;--no:#e0645c;--wa:#e8b04a;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--tx);font-family:"Trebuchet MS","Segoe UI",Verdana,sans-serif}
+button{font:inherit;color:var(--tx);background:var(--pn);border:2px solid var(--ln);border-radius:10px;padding:.6em 1em;cursor:pointer}
+button:hover:not(:disabled){border-color:var(--ac)}button:disabled{opacity:.35;cursor:not-allowed}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+#app{height:100%;display:flex;flex-direction:column;padding:2vh 3vw}
+body.p #app{margin-right:370px}
+.c{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:3vh}
+h1{font-size:clamp(3rem,9vw,8rem);margin:0;letter-spacing:.04em;color:var(--ac)}
+.sub{font-size:clamp(1rem,2.2vw,2rem);color:var(--mu)}
+.big{font-size:clamp(1.2rem,2.4vw,2.2rem);padding:.7em 1.6em}
+.big.pr{background:var(--ac);color:#08222a;border-color:var(--ac);font-weight:700}
+.hd{display:flex;justify-content:space-between;align-items:center;font-size:clamp(1.2rem,2.6vw,2.4rem);font-weight:700}
+.hd b{color:var(--ac)}
+.tm{font-size:clamp(3rem,9vh,7rem);font-weight:700;text-align:center;font-variant-numeric:tabular-nums;line-height:1}
+.tm.w{color:var(--wa)}.tm.z{color:var(--no)}
+.q{flex:1;display:flex;flex-direction:column;justify-content:center;gap:1.2vh;font-size:clamp(1.8rem,4.6vw,4.4rem);line-height:1.25;padding:0 2vw;text-align:center}
+.q p{margin:0}.q em{font-style:normal;color:var(--ac);font-weight:700}
+.stt{text-align:center;font-size:clamp(1.3rem,2.8vw,2.6rem);font-weight:700;min-height:2.6em;display:flex;flex-direction:column;justify-content:center}
+.stt.ok{color:var(--ok)}.stt.no{color:var(--no)}.stt.wa{color:var(--wa)}
+.an{background:var(--pn);border:2px solid var(--ok);border-radius:14px;padding:1.2vh 2vw;font-size:clamp(1.1rem,2.3vw,2.1rem);text-align:center;line-height:1.5}
+.sb{display:grid;grid-template-columns:repeat(9,1fr);gap:.6vw;margin-top:1.5vh}
+.sb div{background:var(--pn);border:2px solid var(--ln);border-radius:10px;padding:.6vh .4vw;text-align:center;overflow:hidden}
+.sb small{display:block;font-size:clamp(.6rem,1vw,.9rem);color:var(--mu);white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+.sb strong{font-size:clamp(1.2rem,2.6vw,2.4rem)}
+.sb .s{border-color:var(--ac)}.sb .x{opacity:.45}.sb .b{border-color:var(--ok)}
+table{border-collapse:collapse;font-size:clamp(1.2rem,2.4vw,2.2rem);min-width:40vw}
+td,th{padding:.4em 1em;border-bottom:1px solid var(--ln);text-align:left}td:last-child,th:last-child{text-align:right}
+#pn{display:none;position:fixed;top:0;right:0;bottom:0;width:370px;max-width:100%;background:var(--pn);border-left:2px solid var(--ln);overflow:auto;padding:12px;z-index:5;font-size:.95rem}
+body.p #pn{display:block}
+#pn h3{margin:14px 0 6px;font-size:1rem;color:var(--ac)}
+#pn .g{display:grid;gap:6px}.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:1fr 1fr}.g5{grid-template-columns:repeat(5,1fr)}
+#pn button{padding:.55em .3em;font-size:.9rem}#pn small{display:block;font-size:.7rem;color:var(--mu)}
+#pn input,#pn select{width:100%;background:var(--bg);color:var(--tx);border:2px solid var(--ln);border-radius:8px;padding:.45em;font:inherit}
+#pn .ok{background:var(--ok);color:#06210f;border-color:var(--ok)}#pn .no{background:var(--no);color:#2a0805;border-color:var(--no)}
+#gear{position:fixed;right:10px;bottom:10px;opacity:.5;z-index:4;font-size:.85rem}#gear:hover{opacity:1}
+body.p #gear{display:none}
+#md{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9;align-items:center;justify-content:center}
+#md.o{display:flex}
+#md .bx{background:var(--pn);border:2px solid var(--ac);border-radius:14px;padding:26px;text-align:center;width:min(420px,92vw)}
+#md input{width:100%;font-size:1.8rem;text-align:center;letter-spacing:.4em;background:var(--bg);color:var(--tx);border:2px solid var(--ln);border-radius:10px;padding:.3em;margin:12px 0}
+#md p{min-height:1.4em;margin:6px 0}
+@media (max-width:900px){body.p #app{margin-right:0}.sb{grid-template-columns:repeat(3,1fr)}}
+</style></head><body>
+<div id="app"></div><div id="pn"></div>
+<button id="gear" onclick="openPin()">Dashboard guru</button>
+<div id="md"><div class="bx"><h2>MASUKKAN PIN GURU</h2>
+<input id="pin" type="password" inputmode="numeric" maxlength="12" autocomplete="off">
+<p id="pm"></p><button onclick="chkPin()">Masuk</button> <button onclick="closePin()">Batal</button></div></div>
+<script>
+const EL=[["H","Hidrogen","1"],["He","Helium","2"],["Li","Litium","2,1"],["Be","Berilium","2,2"],["B","Boron","2,3"],["C","Karbon","2,4"],["N","Nitrogen","2,5"],["O","Oksigen","2,6"],["F","Fluor","2,7"],["Ne","Neon","2,8"],["Na","Natrium","2,8,1"],["Mg","Magnesium","2,8,2"],["Al","Aluminium","2,8,3"],["Si","Silikon","2,8,4"],["P","Fosfor","2,8,5"],["S","Sulfur","2,8,6"],["Cl","Klorin","2,8,7"],["Ar","Argon","2,8,8"],["K","Kalium","2,8,8,1"],["Ca","Kalsium","2,8,8,2"]];
+const Q=EL.map((e,i)=>{const c=e[2].split(",").map(Number),z=i+1,cs=c.join(", "),v=c[c.length-1],k=c.length;
+const t=i%2===0?[`Konfigurasi elektronku adalah <em>${cs}</em>.`,`Aku memiliki <em>${k} kulit</em> elektron.`,`Siapakah aku? Sebutkan juga nomor atomku.`]
+:[`Nomor atomku adalah <em>${z}</em>.`,`Siapakah aku?`,`Tentukan konfigurasi elektron, jumlah kulit, dan elektron valensiku.`];
+return{t,z,n:e[1],s:e[0],cs,v,k}});
+const PIN="310526",N=9;
+const S={scr:"start",order:[],qi:0,st:[],sel:null,win:null,last:null,sc:Array(N).fill(0),dur:60,rem:60,run:false,ans:false,done:false,up:false,mode:"urut",names:Array.from({length:N},(_,i)=>"Kelompok "+(i+1)),given:{},panel:false,ok:false};
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt=s=>String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0");
+const allX=()=>S.st.every(x=>x==="x");
+function newQ(){S.st=Array(N).fill("n");S.sel=null;S.win=null;S.last=null;S.ans=false;S.done=false;S.up=false;S.given={};S.qp=Array(N).fill(0);S.rem=S.dur;S.run=true}
+function startGame(){S.order=[...Q.keys()];if(S.mode==="acak")for(let i=S.order.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[S.order[i],S.order[j]]=[S.order[j],S.order[i]]}
+S.qi=0;S.sc=Array(N).fill(0);S.scr="game";newQ();render()}
+setInterval(()=>{if(S.scr!=="game"||!S.run||S.done)return;S.rem--;if(S.rem<=0){S.rem=0;S.run=false;S.up=true;render()}else updT()},1000);
+function updT(){const t=$("tm");if(!t)return;t.textContent=fmt(S.rem);t.className="tm"+(S.rem<=10?" w":"")}
+function pick(g){if(S.scr!=="game"||S.done||S.st[g]!=="n")return;if(S.sel!==null)S.st[S.sel]="n";S.sel=g;S.st[g]="s";S.last=null;render()}
+function judge(ok){if(S.scr!=="game"||S.done||S.sel===null||S.st[S.sel]!=="s")return;const g=S.sel;
+if(ok){S.sc[g]+=5;S.qp[g]+=5;S.st[g]="b";S.win=g;S.done=true;S.ans=true;S.run=false;S.sel=null}
+else{S.st[g]="x";S.last=g;S.sel=null}render()}
+function showAns(){if(S.scr!=="game"||S.ans||!(allX()||S.up))return;if(S.sel!==null){S.st[S.sel]="n";S.sel=null}S.ans=true;S.done=true;S.run=false;render()}
+function next(){if(S.scr!=="game"||!S.done)return;if(S.qi>=S.order.length-1){S.scr="end";S.run=false}else{S.qi++;newQ()}render()}
+function resetQ(){if(S.scr!=="game"||!confirm("Yakin ingin mengulang soal ini?"))return;S.sc=S.sc.map((v,i)=>v-S.qp[i]);newQ();render()}
+function resetAll(){if(!confirm("Apakah Anda yakin ingin menghapus seluruh skor dan memulai permainan dari awal?"))return;if(S.scr==="game")startGame();else render()}
+function tAdd(d){if(S.scr!=="game"||S.done)return;S.rem=Math.max(0,S.rem+d);if(S.rem>0)S.up=false;else{S.up=true;S.run=false}render()}
+function tTog(){if(S.scr!=="game"||S.done||S.rem<=0)return;S.run=!S.run;render()}
+function tRes(){if(S.scr!=="game"||S.done)return;S.rem=S.dur;S.up=false;S.run=true;render()}
+function save(){const d=parseInt($("dur").value,10);if(d>=5&&d<=600){S.dur=d;if(S.scr!=="game")S.rem=d}
+S.mode=$("mode").value;for(let i=0;i<N;i++){const v=$("nm"+i).value.trim();S.names[i]=v||"Kelompok "+(i+1)}render()}
+function setDur(d){$("dur").value=d}
+function begin(){save();if(S.scr==="game"&&!confirm("Mulai ulang permainan dari Soal 1?"))return;startGame()}
+function render(){
+const app=$("app");
+if(S.scr==="start"){app.innerHTML=`<div class="c"><h1>WHO AM I?</h1><div class="sub">GAME KONFIGURASI ELEKTRON, MODEL ATOM BOHR</div>
+<div><button class="big pr" onclick="begin0()">MULAI PERMAINAN</button> <button class="big" onclick="openPin()">DASHBOARD GURU</button></div></div>`}
+else if(S.scr==="end"){app.innerHTML=`<div class="c"><h1 style="font-size:clamp(2.5rem,6vw,5rem)">GAME SELESAI</h1><table><tr><th>Kelompok</th><th>Skor Akhir</th></tr>${S.names.map((n,i)=>`<tr><td>${esc(n)}</td><td>${S.sc[i]}</td></tr>`).join("")}</table>
+<div><button class="big pr" onclick="startGame()">MAIN LAGI</button> <button class="big" onclick="S.scr='start';render()">KEMBALI KE MENU UTAMA</button></div></div>`}
+else{const q=Q[S.order[S.qi]];let stt="",cl="";
+if(S.win!==null){stt=esc(S.names[S.win])+" BENAR!";cl="ok"}
+else if(S.ans){stt="JAWABAN DITAMPILKAN";cl="wa"}
+else if(S.sel!==null){stt=esc(S.names[S.sel])+" SEDANG MENJAWAB";cl="wa"}
+else if(allX()){stt="SEMUA KELOMPOK SUDAH MENCOBA";cl="no"}
+else if(S.last!==null){stt=esc(S.names[S.last])+" SUDAH MENCOBA DAN SALAH.<br>SILAKAN PILIH KELOMPOK LAIN.";cl="no"}
+else stt="Menunggu guru memilih kelompok";
+const tc=S.up?"z":S.rem<=10?"w":"";
+app.innerHTML=`<div class="hd"><span>WHO AM I?</span><b>SOAL ${S.qi+1} / ${S.order.length}</b></div>
+<div class="tm ${tc}" id="tm">${S.up?"WAKTU HABIS":fmt(S.rem)}</div>
+<div class="q">${q.t.map(x=>`<p>${x}</p>`).join("")}</div>
+<div class="stt ${cl}">${stt}</div>
+${S.ans?`<div class="an"><b>JAWABAN</b><br>Nomor atom: ${q.z} | Unsur: ${q.n} (${q.s}) | Konfigurasi: ${q.cs}<br>Elektron valensi: ${q.v} | Jumlah kulit: ${q.k}</div>`:""}
+<div class="sb">${S.st.map((s,i)=>`<div class="${s==="s"?"s":s==="x"?"x":s==="b"?"b":""}"><small>${esc(S.names[i])}</small><strong>${S.sc[i]}</strong></div>`).join("")}</div>`}
+panel()}
+function begin0(){startGame()}
+function panel(){
+const p=$("pn");document.body.classList.toggle("p",S.panel&&S.ok);if(!(S.panel&&S.ok))return;
+const g=S.scr==="game",lab={n:"belum",s:"menjawab",b:"benar",x:"salah"};
+p.innerHTML=`<div style="display:flex;justify-content:space-between;align-items:center"><b>TEACHER DASHBOARD</b><button onclick="S.panel=false;render()">Tutup</button></div>
+<h3>Pengaturan waktu</h3><div class="g g2"><div><small>Detik per soal</small><input id="dur" type="number" min="5" max="600" value="${S.dur}"></div>
+<div><small>Urutan soal</small><select id="mode"><option value="urut" ${S.mode==="urut"?"selected":""}>Mode urut</option><option value="acak" ${S.mode==="acak"?"selected":""}>Mode acak</option></select></div></div>
+<div class="g g5" style="margin-top:6px">${[30,45,60,90,120].map(d=>`<button onclick="setDur(${d})">${d}</button>`).join("")}</div>
+<h3>Nama kelompok</h3><div class="g g3">${S.names.map((n,i)=>`<div><small>K${i+1}</small><input id="nm${i}" value="${esc(n)}" maxlength="16"></div>`).join("")}</div>
+<div class="g g2" style="margin-top:8px"><button onclick="save()">SIMPAN PENGATURAN</button><button class="ok" onclick="begin()">MULAI PERMAINAN</button></div>
+<h3>Pilih kelompok (tombol 1 sampai 9)</h3><div class="g g3">${S.st.length?S.st.map((s,i)=>`<button onclick="pick(${i})" ${!g||S.done||s==="x"||s==="b"?"disabled":""} ${s==="s"?'style="border-color:var(--ac)"':""}>K${i+1}<small>${lab[s]}</small></button>`).join(""):""}</div>
+<h3>Penilaian (B / S)</h3><div class="g g2"><button class="ok" onclick="judge(true)" ${!g||S.sel===null||S.done?"disabled":""}>BENAR</button><button class="no" onclick="judge(false)" ${!g||S.sel===null||S.done?"disabled":""}>SALAH</button></div>
+<h3>Timer (P untuk pause)</h3><div class="g g5"><button onclick="tAdd(10)">+10</button><button onclick="tAdd(-10)">-10</button><button onclick="tTog()">${S.run?"Pause":"Lanjut"}</button><button onclick="tRes()">Reset</button><span></span></div>
+<h3>Navigasi</h3><div class="g g2"><button onclick="showAns()" ${!g||S.ans||!(allX()||S.up)?"disabled":""}>TAMPILKAN JAWABAN (J)</button><button class="ok" onclick="next()" ${!g||!S.done?"disabled":""}>SOAL BERIKUTNYA (N)</button>
+<button onclick="resetQ()" ${g?"":"disabled"}>RESET SOAL</button><button class="no" onclick="resetAll()">RESET SEMUA SKOR</button></div>
+<small style="margin-top:10px">Jawaban baru bisa dibuka saat semua kelompok salah atau waktu habis.</small>`}
+function openPin(){$("pin").value="";$("pm").textContent="";$("md").classList.add("o");setTimeout(()=>$("pin").focus(),30)}
+function closePin(){$("md").classList.remove("o")}
+function chkPin(){if($("pin").value===PIN){S.ok=true;$("pm").textContent="AKSES GURU DITERIMA";$("pm").style.color="var(--ok)";setTimeout(()=>{closePin();S.panel=true;render()},600)}
+else{$("pm").textContent="PIN SALAH. SILAKAN COBA LAGI.";$("pm").style.color="var(--no)";$("pin").value=""}}
+$("pin").addEventListener("keydown",e=>{if(e.key==="Enter")chkPin();if(e.key==="Escape")closePin()});
+document.addEventListener("keydown",e=>{if(!(S.panel&&S.ok)||e.target.tagName==="INPUT"||e.target.tagName==="SELECT"||e.ctrlKey||e.metaKey||e.altKey)return;
+const k=e.key.toLowerCase();if(/^[1-9]$/.test(k))pick(+k-1);else if(k==="b")judge(true);else if(k==="s")judge(false);else if(k==="n")next();else if(k==="j")showAns();else if(k==="p")tTog()});
+render();
+</script></body></html>
